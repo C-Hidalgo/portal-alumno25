@@ -27,4 +27,42 @@ Podés probar la aplicación desde este enlace:
 
 ## 🗂️ Estructura del proyecto
 
-portal-alumno25/ ├── app.py # Código principal de la app Flask ├── requirements.txt # Dependencias del proyecto ├── Procfile # Indicaciones de despliegue para Render ├── templates/ │ ├── index.html # Página de inicio de sesión │ └── perfil.html # Perfil del alumno con datos ├── data/ │ ├── alumnos.xlsx # Datos de validación (correo, DNI, contraseña) │ └── datos_alumno.xlsx # Datos personales (nombre, curso, división, horario_id)
+portal-alumno25/ ├── app.py # Código principal de la app Flask├── requirements.txt # Dependencias del proyecto ├── Procfile # Indicaciones de despliegue para Render ├── templates/ │ ├── index.html # Página de inicio de sesión │ └── perfil.html # Perfil del alumno con datos ├── data/ │ ├── alumnos.xlsx # Datos de validación (correo, DNI, contraseña) │ └── datos_alumno.xlsx # Datos personales (nombre, curso, división, horario_id)
+
+
+---
+
+## 🧪 Cómo probarlo localmente
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/C-Hidalgo/portal-alumno25.git
+cd portal-alumno25
+
+2. Crear un entorno virtual (opcional pero recomendado)
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+
+3. Instalar dependencias
+pip install -r requirements.txt
+
+4. Ejecutar la app
+python app.py
+
+Abrí tu navegador y entrá a:
+🔗 http://localhost:5000
+
+🔐 Datos de prueba
+Podés usar alguno de los usuarios del archivo alumnos.xlsx como credenciales de inicio de sesión. Por ejemplo:
+
+Email: alumno1@gmail.com
+
+Contraseña: 36543210
+
+📌 Notas
+La contraseña inicial es el DNI del alumno.
+
+En versiones futuras, se puede agregar cambio de contraseña, edición de datos y más seguridad.
+
+
