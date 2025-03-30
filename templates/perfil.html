@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil de Estudiante</title>
+  <style>
+    body {
+      background-color: #d0e4f5;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      color: #333;
+    }
+
+    .perfil-container {
+      max-width: 1000px;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .datos-basicos {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .datos-texto {
+      flex: 1;
+    }
+
+    .datos-texto p {
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .foto {
+      width: 120px;
+      height: 120px;
+      background-color: #ccc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #555;
+    }
+
+    .tabla-horario,
+    .tabla-asistencia {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    .tabla-asistencia {
+      font-size: 13px;
+    }
+
+    .tabla-horario th,
+    .tabla-horario td,
+    .tabla-asistencia th,
+    .tabla-asistencia td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .tabla-horario th,
+    .tabla-asistencia th {
+      background-color: #b2d7ee;
+    }
+
+    .seccion {
+      margin-bottom: 30px;
+    }
+
+    .seccion h2 {
+      background-color: #b2d7ee;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+
+    .lineas {
+      margin-top: 10px;
+      height: 120px;
+      background-color: #e0f2fa;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .lineas ul {
+      padding-left: 20px;
+    }
+
+    .lineas li {
+      margin-bottom: 8px;
+    }
+
+    .materias-grid {
+      display: flex;
+      gap: 40px;
+      background-color: #b2d7ee;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .materias-grid .columna {
+      flex: 1;
+    }
+
+    .materias-grid h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .materias,
+    .temas {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .materias li::before {
+      content: "";
+      display: block;
+      border-bottom: 2px solid black;
+      width: 60%;
+      margin-bottom: 10px;
+    }
+
+    .temas li::before {
+      content: "";
+      display: block;
+      border-bottom: 2px dashed black;
+      width: 95%;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .datos-basicos {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .foto {
+        align-self: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Perfil de Estudiante</h1>
+  </header>
+
+  <div class="perfil-container">
+
+    <div class="datos-basicos">
+      <div class="datos-texto">
+        <p>Nombre: {{ nombre }}</p>
+        <p>CURSO: {{ curso }}</p>
+        <p>DIVISIÓN: {{ division }}</p>
+
+      </div>
+      <div class="foto">Foto</div>
+    </div>
+
+    <div class="seccion">
+      <h2>Horario</h2>
+      <table class="tabla-horario">
+        <tr>
+          <th>Hora</th>
+          <th>Lunes</th>
+          <th>Martes</th>
+          <th>Miércoles</th>
+          <th>Jueves</th>
+          <th>Viernes</th>
+        </tr>
+        <tr><td>7:30 a 8:10</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>8:10 a 8:50</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>9:00 a 9:40</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>9:40 a 10:20</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>10:30 a 11:10</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>11:10 a 11:50</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>12:00 a 12:40</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>12:40 a 13:20</td><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+
+    <div class="seccion">
+      <h2>Asistencias</h2>
+      <table class="tabla-asistencia">
+        <tr>
+          <th>FECHA</th>
+          <th>INASISTENCIA / LLEGADA TARDE</th>
+          <th>FALTAS</th>
+          <th>TOTAL A LA FECHA</th>
+          <th>AUTORIDAD</th>
+          <th>FIRMADA CON MI CONSENTIMIENTO</th>
+        </tr>
+        <!-- 9 filas vacías -->
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+
+    <div class="seccion">
+      <h2>Materias Adeudadas</h2>
+      <div class="materias-grid">
+        <div class="columna">
+          <h3>Materia adeudada</h3>
+          <ul class="materias">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="columna">
+          <h3>Temas</h3>
+          <ul class="temas">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="seccion">
+      <h2>Tareas Pendientes</h2>
+      <div class="lineas">
+        <ul>
+          <li>_______________________________</li>
+          <li>_______________________________</li>
+          <li>_______________________________</li>
+          <li>_______________________________</li>
+          <li>_______________________________</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align: right; padding: 10px 20px;">
+      <a href="/" style="color: #4a90e2; font-weight: bold; text-decoration: none;">Cerrar sesión</a>
+    </div>
+    
+
+  </div>
+
+</body>
+</html>
