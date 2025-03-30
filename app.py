@@ -52,4 +52,8 @@ def login():
         return render_template("index.html", error="Usuario o contraseña incorrectos.")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+     # Para Render (producción)
+    app.run(host='0.0.0.0', port=10000)
+    
+    # Para local
+   # app.run(debug=True)
